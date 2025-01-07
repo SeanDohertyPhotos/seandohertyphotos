@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+  background-color: #000000;
+}
+
+.App-header {
+  background-color: #000000;
+  padding: 20px;
+  color: white;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gallery img {
+  margin: 10px;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
