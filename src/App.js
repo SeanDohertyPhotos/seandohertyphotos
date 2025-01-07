@@ -14,11 +14,27 @@ function App() {
   const [lightbox, setLightbox] = useState({ isOpen: false, imgSrc: '', currentIndex: 0 });
 
   useEffect(() => {
+    const handleScroll = (e) => {
+      if (lightbox.isOpen) {
+        if (e.deltaY < 0) {
+          showPrevImage(e);
+        } else if (e.deltaY > 0) {
+          showNextImage(e);
+        }
+      }
+    };
+
     if (lightbox.isOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('wheel', handleScroll);
     } else {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('wheel', handleScroll);
     }
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
   }, [lightbox.isOpen]);
 
   const openLightbox = (imgSrc, index) => {
