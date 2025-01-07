@@ -11,7 +11,7 @@ function importAll(r) {
 const images = importAll(require.context('../public/images', false, /\.(webp)$/));
 
 function App() {
-  const [lightbox, setLightbox] = useState({ isOpen: false, imgSrc: '' });
+  const [lightbox, setLightbox] = useState({ isOpen: false, imgSrc: '', currentIndex: 0 });
 
   useEffect(() => {
     if (lightbox.isOpen) {
@@ -21,12 +21,24 @@ function App() {
     }
   }, [lightbox.isOpen]);
 
-  const openLightbox = (imgSrc) => {
-    setLightbox({ isOpen: true, imgSrc });
+  const openLightbox = (imgSrc, index) => {
+    setLightbox({ isOpen: true, imgSrc, currentIndex: index });
   };
 
   const closeLightbox = () => {
-    setLightbox({ isOpen: false, imgSrc: '' });
+    setLightbox({ isOpen: false, imgSrc: '', currentIndex: 0 });
+  };
+
+  const showPrevImage = (e) => {
+    e.stopPropagation();
+    const newIndex = (lightbox.currentIndex - 1 + images.length) % images.length;
+    setLightbox({ isOpen: true, imgSrc: images[newIndex], currentIndex: newIndex });
+  };
+
+  const showNextImage = (e) => {
+    e.stopPropagation();
+    const newIndex = (lightbox.currentIndex + 1) % images.length;
+    setLightbox({ isOpen: true, imgSrc: images[newIndex], currentIndex: newIndex });
   };
 
   return (
@@ -35,7 +47,7 @@ function App() {
       <div className="gallery">
         {images.map((image, index) => (
           <LazyLoad key={index} height={200} offset={100} once>
-            <img src={image} alt={`Gallery image ${index + 1}`} onClick={() => openLightbox(image)} />
+            <img src={image} alt={`Gallery image ${index + 1}`} onClick={() => openLightbox(image, index)} />
           </LazyLoad>
         ))}
       </div>
@@ -43,8 +55,10 @@ function App() {
       {lightbox.isOpen && (
         <div className="lightbox" style={{ display: 'flex' }} onClick={closeLightbox}>
           <span className="lightbox-close" onClick={closeLightbox}>&times;</span>
-          <div className="lightbox-content">
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <img src={lightbox.imgSrc} alt="Lightbox" />
+            <span className="lightbox-nav lightbox-nav-prev" onClick={showPrevImage}>&#10094;</span>
+            <span className="lightbox-nav lightbox-nav-next" onClick={showNextImage}>&#10095;</span>
           </div>
         </div>
       )}

@@ -57,6 +57,7 @@
   display: block;
   max-width: 90%;
   max-height: 90%;
+  position: relative; /* Ensure navigation buttons are positioned correctly */
 }
 
 .lightbox-content img {
@@ -81,4 +82,31 @@
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.3s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.lightbox-nav:hover,
+.lightbox-nav:focus {
+  color: #bbb;
+}
+
+.lightbox-nav-prev {
+  left: 0;
+}
+
+.lightbox-nav-next {
+  right: 0;
 }
