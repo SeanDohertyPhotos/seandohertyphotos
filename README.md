@@ -1,1 +1,1 @@
-My website.
+I got tired of paying squarespace so I wrote my own website.
