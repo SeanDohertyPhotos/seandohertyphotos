@@ -17,6 +17,10 @@ def resize_and_convert_images(input_dir, output_dir):
             output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + '.webp')
             img.save(output_path, 'webp')
             print(f"Processed {filename} -> {output_path}")
+            
+            # Delete the original JPG file
+            os.remove(img_path)
+            print(f"Deleted original file {filename}")
 
 input_directory = 'public\images'
 output_directory = 'public\images'
