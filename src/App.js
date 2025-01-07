@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import LazyLoad from 'react-lazyload';
+import Footer from './Footer';
 
 function importAll(r) {
   return r.keys().map(r);
@@ -20,6 +21,7 @@ function App() {
           </LazyLoad>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
