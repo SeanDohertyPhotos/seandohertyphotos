@@ -6,7 +6,7 @@
 
 .App-header {
   background-color: #000000;
-  padding: 20px;
+  padding: 10px;
   color: white;
 }
 
@@ -32,6 +32,7 @@
   height: auto;
   border-radius: 2.5%;
   transition: transform 0.2s; /* Smooth transition for hover effect */
+  cursor: pointer;
 }
 
 .gallery img:hover {
