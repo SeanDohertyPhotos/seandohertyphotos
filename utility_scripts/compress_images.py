@@ -14,8 +14,8 @@ def compress_images(input_dir, output_dir=None, max_size=1080, quality=75):
 
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     
-    # Supported image formats
-    formats = ('.png', '.jpg', '.jpeg', '.webp')
+    # Supported image formats (only jpg and jpeg)
+    formats = ('.jpg', '.jpeg')
     
     for filename in os.listdir(input_dir):
         if filename.lower().endswith(formats):
