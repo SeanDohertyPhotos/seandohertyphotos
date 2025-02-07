@@ -75,6 +75,7 @@ function App() {
             <img src={lightbox.imgSrc} alt="Lightbox" />
             <span className="lightbox-nav lightbox-nav-prev" onClick={showPrevImage}>&#10094;</span>
             <span className="lightbox-nav lightbox-nav-next" onClick={showNextImage}>&#10095;</span>
+            <p style={{ color: "#ccc" }}>{lightbox.imgSrc.split('/').pop()}</p>
           </div>
         </div>
       )}

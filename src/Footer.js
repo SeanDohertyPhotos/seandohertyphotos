@@ -8,8 +8,8 @@ function Footer() {
            𝕏
         </a>
       </h2>
-      <h2>(856) 803-6982</h2>
-      <h2><a href="mailto:seandohertyphotos@gmail.com">seandohertyphotos@gmail.com</a></h2>
+      <h3>(856) 803-6982</h3>
+      <h3><a href="mailto:seandohertyphotos@gmail.com">seandohertyphotos@gmail.com</a></h3>
       <p>&copy; 2025 Sean Doherty Photos. All rights reserved.</p>
     </footer>
   );

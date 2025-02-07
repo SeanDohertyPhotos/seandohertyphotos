@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
+
 body {
   margin: 0;
-  font-family: 'SF Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'DM Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +19,11 @@ h2{
   font-size: 1.5em;
   font-weight: 200;
   font-style: italic;
+}
+h3{
+  font-family: 'DM Mono', sans-serif;
+  font-size: 1.2em;
+  font-weight: 200;
 }
 
 a {

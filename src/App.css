@@ -68,6 +68,11 @@
   border-radius: 2.5%;
 }
 
+.lightbox-content p {
+  font-family: 'DM Mono';
+  color: #ccc;
+}
+
 .lightbox-close {
   position: absolute;
   top: 20px;
@@ -78,7 +83,7 @@
   transition: 0.3s;
 }
 
-.lightbox-close:hover,
+lightbox-close:hover,
 .lightbox-close:focus {
   color: #bbb;
   text-decoration: none;
