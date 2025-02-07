@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1e79bf21c85875e8386d50883497779b",
+    "revision": "ed12a7df233e2ef164c3ec41d3b40111",
     "url": "/seandohertyphotos/index.html"
   },
   {
-    "revision": "be799af82d8bbdaec803",
-    "url": "/seandohertyphotos/static/css/main.f87d2341.chunk.css"
+    "revision": "7e685cfe23fecce7abbf",
+    "url": "/seandohertyphotos/static/css/main.b1bf192a.chunk.css"
   },
   {
-    "revision": "51e828af19bba7490bce",
-    "url": "/seandohertyphotos/static/js/2.1b390a57.chunk.js"
+    "revision": "d0482ff9155b5ea02fdd",
+    "url": "/seandohertyphotos/static/js/2.600e1754.chunk.js"
   },
   {
     "revision": "60f6bf9e100e456690e9ab6c9a37bfc2",
-    "url": "/seandohertyphotos/static/js/2.1b390a57.chunk.js.LICENSE.txt"
+    "url": "/seandohertyphotos/static/js/2.600e1754.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8379fb2030a7a071fda0",
-    "url": "/seandohertyphotos/static/js/3.0797960e.chunk.js"
+    "revision": "d4af1880708eee39714a",
+    "url": "/seandohertyphotos/static/js/3.31470218.chunk.js"
   },
   {
-    "revision": "be799af82d8bbdaec803",
-    "url": "/seandohertyphotos/static/js/main.1674d19d.chunk.js"
+    "revision": "7e685cfe23fecce7abbf",
+    "url": "/seandohertyphotos/static/js/main.78f2ab96.chunk.js"
   },
   {
-    "revision": "6c72ca0e7f30ae3775b4",
-    "url": "/seandohertyphotos/static/js/runtime-main.2c1e0271.js"
+    "revision": "bd908c2c729b5269301b",
+    "url": "/seandohertyphotos/static/js/runtime-main.cd52695d.js"
   },
   {
     "revision": "b50d52a6710333fe4d9c4c0c8d7518f2",
@@ -246,5 +246,45 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b7ec791d805832fde644fdd72681c5e5",
     "url": "/seandohertyphotos/static/media/SKD-Film-UltraMax-2024-12-23-7.b7ec791d.webp"
+  },
+  {
+    "revision": "2ab88ed507615008489de3fabe370afc",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-PRINT-2024-09-24-2.2ab88ed5.webp"
+  },
+  {
+    "revision": "d065fd746e4289eb334389938dd0b034",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2024-09-23.d065fd74.webp"
+  },
+  {
+    "revision": "90a4acbe3f631743e0e9aa3fd952f80e",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2024-10-02-PRINT-2.90a4acbe.webp"
+  },
+  {
+    "revision": "01c0022e8ced4dceea13f8ce1efc3696",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2024-11-25.01c0022e.webp"
+  },
+  {
+    "revision": "8ade73d5cf0a9fc035836d2c07ef9dcd",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2025-01-14-PRINT-2.8ade73d5.webp"
+  },
+  {
+    "revision": "8cab6f694e6ad7027487f18f7e4846c1",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2025-01-16-PRINT-4.8cab6f69.webp"
+  },
+  {
+    "revision": "01bd7a3bf503a5085c296aa30b58887d",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2025-01-16-PRINT-5.01bd7a3b.webp"
+  },
+  {
+    "revision": "6e9166b760374598cff0713dc159fbe8",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-Print-2025-01-16.6e9166b7.webp"
+  },
+  {
+    "revision": "fd166a8186bdf797c019938cb8c7cd6d",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-WM-2024-10-02-4.fd166a81.webp"
+  },
+  {
+    "revision": "3ef9fcae89ba939165bfc05e077404cc",
+    "url": "/seandohertyphotos/static/media/SKD-Starbase-WM-2024-10-07.3ef9fcae.webp"
   }
 ]);
