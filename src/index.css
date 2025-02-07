@@ -11,8 +11,9 @@ body {
 
 h1{
   font-family: 'Playfair Display', serif;
-  font-size: 3em;
-  font-weight: 200;
+  font-size: 4em;
+  font-weight: 100;
+  letter-spacing: 0.2em;
 }
 h2{
   font-family: 'helvetica', sans-serif;
