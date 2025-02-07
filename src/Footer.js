@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="App-footer">
+    <footer className="App-footer" style={{ borderTop: '1px solid #fff' }}>
       <h2>
         <a href="https://x.com/SeanKD_Photos" target="_blank" rel="noopener noreferrer">
            𝕏
