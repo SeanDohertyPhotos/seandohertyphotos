@@ -8,7 +8,7 @@ function importAll(r) {
   return r.keys().map(r);
 }
 
-const images = importAll(require.context('../public/images', false, /\.(webp)$/));
+const images = importAll(require.context('./images', false, /\.(webp)$/));
 
 function App() {
   const [lightbox, setLightbox] = useState({ isOpen: false, imgSrc: '', currentIndex: 0 });
