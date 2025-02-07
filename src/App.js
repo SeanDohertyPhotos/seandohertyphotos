@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
-import LazyLoad from 'react-lazyload';
 import Footer from './Footer';
+import Gallery from './components/Gallery';
+import Lightbox from './components/Lightbox'; // new import
 
 function importAll(r) {
   return r.keys().map(r);
 }
 
-const images = importAll(require.context('./images', false, /\.(webp)$/));
+const bigBendImages = importAll(require.context('./images/Big Bend', false, /\.(webp)$/));
+const Starbase = importAll(require.context('./images/Starbase', false, /\.(webp)$/));
 
 function App() {
-  const [lightbox, setLightbox] = useState({ isOpen: false, imgSrc: '', currentIndex: 0 });
+  // Include gallery images inside lightbox state
+  const [lightbox, setLightbox] = useState({ isOpen: false, imgSrc: '', currentIndex: 0, images: [] });
 
   useEffect(() => {
     const handleScroll = (e) => {
@@ -37,53 +40,49 @@ function App() {
     };
   }, [lightbox.isOpen]);
 
-  const openLightbox = (imgSrc, index) => {
-    setLightbox({ isOpen: true, imgSrc, currentIndex: index });
+  const openLightbox = (imgSrc, index, galleryImages) => {
+    setLightbox({ isOpen: true, imgSrc, currentIndex: index, images: galleryImages });
   };
 
   const closeLightbox = () => {
-    setLightbox({ isOpen: false, imgSrc: '', currentIndex: 0 });
+    setLightbox({ isOpen: false, imgSrc: '', currentIndex: 0, images: [] });
   };
 
   const showPrevImage = (e) => {
     e.stopPropagation();
-    const newIndex = (lightbox.currentIndex - 1 + images.length) % images.length;
-    setLightbox({ isOpen: true, imgSrc: images[newIndex], currentIndex: newIndex });
+    const galleryImages = lightbox.images;
+    const newIndex = (lightbox.currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    setLightbox({ ...lightbox, imgSrc: galleryImages[newIndex], currentIndex: newIndex });
   };
 
   const showNextImage = (e) => {
     e.stopPropagation();
-    const newIndex = (lightbox.currentIndex + 1) % images.length;
-    setLightbox({ isOpen: true, imgSrc: images[newIndex], currentIndex: newIndex });
+    const galleryImages = lightbox.images;
+    const newIndex = (lightbox.currentIndex + 1) % galleryImages.length;
+    setLightbox({ ...lightbox, imgSrc: galleryImages[newIndex], currentIndex: newIndex });
   };
 
   return (
     <div className="App">
       <Header/>
+
+      {/* Reusable gallery component */}
       <h2>BIG BEND NATIONAL PARK</h2>
-      <div className="gallery">
-        {images.map((image, index) => (
-          <LazyLoad key={index} height={200} offset={100} once>
-            <img src={image} alt={`Gallery image ${index + 1}`} onClick={() => openLightbox(image, index)} />
-          </LazyLoad>
-        ))}
-      </div>
+      <Gallery images={bigBendImages} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, bigBendImages)} />
+      <h2>STARBASE</h2>
+      <Gallery images={Starbase} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, Starbase)} />
+
       <section className="about-me" style={{ padding: '2rem', textAlign: 'center' }}>
         <h1>About Me</h1>
         <p>I'm Sean Doherty, a photographer obsessed with the intersection of art and technologly. My work celebrates the space industry and contrasts that with the beauty of our natual world. I often shoot on a film, on a mission to pay homage to the great photographers who captured our most inconic images durring the 1960s space race.</p>
       </section>
 
-      {lightbox.isOpen && (
-        <div className="lightbox" style={{ display: 'flex' }} onClick={closeLightbox}>
-          <span className="lightbox-close" onClick={closeLightbox}>&times;</span>
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={lightbox.imgSrc} alt="Lightbox" />
-            <span className="lightbox-nav lightbox-nav-prev" onClick={showPrevImage}>&#10094;</span>
-            <span className="lightbox-nav lightbox-nav-next" onClick={showNextImage}>&#10095;</span>
-            <p style={{ color: "#ccc" }}>{lightbox.imgSrc.split('/').pop()}</p>
-          </div>
-        </div>
-      )}
+      <Lightbox
+        lightbox={lightbox}
+        closeLightbox={closeLightbox}
+        showPrevImage={showPrevImage}
+        showNextImage={showNextImage}
+      />
       <Footer />
     </div>
   );
