@@ -65,13 +65,23 @@ function App() {
   return (
     <div className="App">
       <Header/>
-
-      {/* Reusable gallery component */}
-      <h2>BIG BEND NATIONAL PARK</h2>
-      <Gallery images={bigBendImages} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, bigBendImages)} />
       <h2>STARBASE</h2>
       <Gallery images={Starbase} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, Starbase)} />
 
+      {/* Embedded video section */}
+      <h2>2024 STARBASE REEL</h2>
+      <div className="video-container">
+        <iframe 
+          width="800"
+          height="450"
+          src="https://www.youtube.com/embed/6leWkoZmYps" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
+        ></iframe>
+      </div>
+      <h2>BIG BEND NATIONAL PARK</h2>
+      <Gallery images={bigBendImages} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, bigBendImages)} />
       <section className="about-me" style={{ padding: '2rem', textAlign: 'center' }}>
         <h1>About Me</h1>
         <p>I'm Sean Doherty, a photographer obsessed with the intersection of art and technologly. My work celebrates the space industry and contrasts that with the beauty of our natual world. I often shoot on a film, on a mission to pay homage to the great photographers who captured our most inconic images durring the 1960s space race.</p>
