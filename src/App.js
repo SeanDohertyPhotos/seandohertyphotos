@@ -11,6 +11,7 @@ function importAll(r) {
 
 const bigBendImages = importAll(require.context('./images/Big Bend', false, /\.(webp)$/));
 const Starbase = importAll(require.context('./images/Starbase', false, /\.(webp)$/));
+const StarbaseV = importAll(require.context('./images/StarbaseV', false, /\.(webp)$/));
 
 function App() {
   // Include gallery images inside lightbox state
@@ -66,6 +67,7 @@ function App() {
     <div className="App">
       <Header/>
       <h2>STARBASE</h2>
+      <Gallery images={StarbaseV} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, StarbaseV)} />
       <Gallery images={Starbase} onImageClick={(imgSrc, index) => openLightbox(imgSrc, index, Starbase)} />
 
       {/* Embedded video section */}
